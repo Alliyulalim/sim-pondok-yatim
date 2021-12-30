@@ -247,13 +247,23 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'buku',
-            'url' => 'admin/buku',
+            'text' => 'Kegiatan',
+            'url' => 'admin/Kegiatan',
             'icon' => 'far fa-fw fa-file',
         ],
         [
-            'text' => 'pengarang',
-            'url' => 'admin/pengarang',
+            'text' => 'Pengasuh',
+            'url' => 'admin/pengasuh',
+            'icon' => 'far fa-fw fa-file',
+        ],
+        [
+            'text' => 'Anak Asuh',
+            'url' => 'admin/Anak_Asuh',
+            'icon' => 'far fa-fw fa-file',
+        ],
+        [
+            'text' => 'form donasi',
+            'url' => 'admin/Form_donasi',
             'icon' => 'far fa-fw fa-file',
         ],
         [

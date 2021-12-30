@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PengasuhController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -71,4 +72,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     route::get('pengarang', function () {
         return view('pengarang.index');
     })->middleware(['role:admin']);
+
+    Route::resource('pengasuh', PengasuhController::class)->middleware(['role:admin']);
+
 });

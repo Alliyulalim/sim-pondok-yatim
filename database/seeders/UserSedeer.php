@@ -18,16 +18,7 @@ class UserSedeer extends Seeder
     {
         $admin = Role::create([
             'name' => 'admin',
-            'display_name' => 'Izin Admin',
-        ]);
-        $pengguna = Role::create([
-            'name' => 'pengguna',
-            'display_name' => 'Izin Pengguna',
-        ]);
-
-        $kasir = Role::create([
-            'name' => 'kasir',
-            'display_name' => 'Izin kasir',
+            'display_name' => 'izin admin',
         ]);
 
         $userAdmin = new User();
@@ -36,20 +27,6 @@ class UserSedeer extends Seeder
         $userAdmin->password = Hash::make('12345678');
         $userAdmin->save();
         $userAdmin->attachRole($admin);
-
-        $userPengguna = new User();
-        $userPengguna->name = 'muhamad ilhamudin';
-        $userPengguna->email = 'ilham@gmail.com';
-        $userPengguna->Password = Hash::make('12345678');
-        $userPengguna->save();
-        $userPengguna->attachRole($pengguna);
-
-        $kasir = new User();
-        $kasir->name = 'sukaesih';
-        $kasir->email = 'esih@gmail.com';
-        $kasir->password = Hash::make('12345678');
-        $kasir->save();
-        $kasir->attachRole($kasir);
     }
 
 }
