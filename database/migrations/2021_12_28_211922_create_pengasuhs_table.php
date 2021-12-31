@@ -15,6 +15,7 @@ class CreatePengasuhsTable extends Migration
     {
         Schema::create('pengasuhs', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_pengasuhs');
             $table->string('nama_pengasuh');
             $table->string('jk');
             $table->date('tgl_lahir');

@@ -17,14 +17,16 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Data Anak
-                        <a href="{{ route('AnakAsuh.create') }}" class="btn btn-sm btn-outline-primary float-right">Tambah
+                        <h4>Data Anak</h4>
+                        <a href="{{ route('anak_asuh.create') }}" class="btn btn-sm btn-outline-primary float-right">Tambah
                             Data</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <tr>
+                                    <th>NO</th>
+                                    <th>ID_Pengasuh</th>
                                     <th>Nama Anak</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Tanggal Lahir</th>
@@ -34,6 +36,7 @@
                                 @foreach ($anak_asuh as $data)
                                     <tr>
                                         <td>{{ $no++ }}</td>
+                                        <td>{{ $data->id_pengasuhs }}</td>
                                         <td>{{ $data->nama_pengasuh }}</td>
                                         <td>{{ $data->jk }}</td>
                                         <td>{{ $data->tgl_lahir }}</td>

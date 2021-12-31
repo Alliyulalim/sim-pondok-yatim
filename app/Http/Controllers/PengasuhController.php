@@ -37,12 +37,14 @@ class PengasuhController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'id_pengasuhs' => 'required',
             'nama_pengasuh' => 'required',
             'jk' => 'required',
             'tgl_lahir' => 'required',
         ]);
 
         $pengasuh = new Pengasuh;
+        $pengasuh->id_pengasuhs = $request->id_pengasuhs;
         $pengasuh->nama_pengasuh = $request->nama_pengasuh;
         $pengasuh->jk = $request->jk;
         $pengasuh->tgl_lahir = $request->tgl_lahir;
@@ -87,16 +89,19 @@ class PengasuhController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
+            'id_pengasuhs' => 'required',
             'nama_pengasuh' => 'required',
             'jk' => 'required',
             'tgl_lahir' => 'required',
         ]);
 
-        $pengasuh = new Pengasuh;
+        $pengasuh = Pengasuh::findOrFail($id);
+        $pengasuh->id_pengasuhs = $request->id_pengasuhs;
         $pengasuh->nama_pengasuh = $request->nama_pengasuh;
         $pengasuh->jk = $request->jk;
         $pengasuh->tgl_lahir = $request->tgl_lahir;
         $pengasuh->save();
+        return redirect()->route('pengasuh.index');
     }
 
     /**
@@ -105,7 +110,7 @@ class PengasuhController extends Controller
      * @param  \App\Models\pengasuh  $pengasuh
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pengasuh $pengasuh)
+    public function destroy($id)
     {
         $pengasuh = Pengasuh::findOrFail($id);
         $pengasuh->delete();

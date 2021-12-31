@@ -20,7 +20,7 @@ class CreateAnakAsuhsTable extends Migration
             $table->string('jk');
             $table->date('tgl_lahir');
             $table->string('status');
-            $table->foreign('id_pengasuh')->references('id')->on('pengasuhs')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_pengasuhs')->references('id')->on('pengasuhs')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

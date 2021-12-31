@@ -26,6 +26,7 @@
                             <table class="table">
                                 <tr>
                                     <th>NO</th>
+                                    <th>ID</th>
                                     <th>Nama Pengasuh</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Tanggal Lahir</th>
@@ -35,6 +36,7 @@
                                 @foreach ($pengasuh as $data)
                                     <tr>
                                         <td>{{ $no++ }}</td>
+                                        <td>{{ $data->id_pengasuhs}}</td>
                                         <td>{{ $data->nama_pengasuh }}</td>
                                         <td>{{ $data->jk }}</td>
                                         <td>{{ $data->tgl_lahir }}</td>

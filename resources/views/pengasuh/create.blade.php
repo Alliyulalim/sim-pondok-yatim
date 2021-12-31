@@ -9,6 +9,15 @@
                     <div class="card-body">
                         <form action="{{ route('pengasuh.store') }}" method="post">
                             @csrf
+                             <div class="form-group">
+                                <label for="">Masukan ID</label>
+                                <input type="number" name="id_pengasuhs" class="form-control @error('id_pengasuhs') is-invalid @enderror">
+                                @error('id_pengasuhs')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                             <div class="form-group">
                                 <label for="">Masukan Nama pengasuh</label>
                                 <input type="text" name="nama_pengasuh" class="form-control @error('nama_pengasuh') is-invalid @enderror">

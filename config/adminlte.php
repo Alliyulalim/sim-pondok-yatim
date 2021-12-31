@@ -258,7 +258,7 @@ return [
         ],
         [
             'text' => 'Anak Asuh',
-            'url' => 'admin/Anak_Asuh',
+            'url' => 'admin/anak_asuh',
             'icon' => 'far fa-fw fa-file',
         ],
         [

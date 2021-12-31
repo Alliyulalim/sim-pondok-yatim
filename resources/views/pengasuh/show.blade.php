@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Data Anak</div>
+                    <div class="card-header">Data Pengasuh</div>
                     <div class="card-body">
                         <form action="{{ route('pengasuh.update', $pengasuh->id) }}" method="post">
                             @csrf
