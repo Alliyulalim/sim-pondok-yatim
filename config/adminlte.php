@@ -248,7 +248,7 @@ return [
         ],
         [
             'text' => 'Kegiatan',
-            'url' => 'admin/Kegiatan',
+            'url' => 'admin/kegiatan',
             'icon' => 'far fa-fw fa-file',
         ],
         [

@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Data Anak</h1>
+                    <h1 class="m-0">Kegiatan Pondok Yatim</h1>
                 </div>
             </div>
         </div>
@@ -17,36 +17,36 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Data Anak</h4>
-                        <a href="{{ route('anak_asuh.create') }}" class="btn btn-sm btn-outline-primary float-right">Tambah
-                            Data</a>
+                        Kegiatan
+                        <a href="{{ route('kegiatan.create') }}" class="btn btn-sm btn-outline-primary float-right">Tambah
+                            Kegiatan</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <tr>
-                                    <th>NO</th>
-                                    <th>ID_Pengasuh</th>
-                                    <th>Nama Anak</th>
-                                    <th>Jenis Kelamin</th>
-                                    <th>Tanggal Lahir</th>
+                                    <th>No</th>
+                                    <th>Judul</th>
+                                    <th>Gambar</th>
+                                    <th>Isi</th>
+                                    <th>Tanggal Kegiatan</th>
                                     <th>Aksi</th>
                                 </tr>
                                 @php $no=1; @endphp
-                                @foreach ($pengasuh as $data)
+                                @foreach ($kegiatan as $data)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $data->id_pengasuhs }}</td>
-                                        <td>{{ $data->nama_pengasuh }}</td>
-                                        <td>{{ $data->jk }}</td>
-                                        <td>{{ $data->tgl_lahir }}</td>
+                                        <td>{{ $data->judul }}</td>
+                                        <td><img src="{{$data->image()}}" alt="" style="width:150px; height:150px;" alt="image"></td>
+                                        <td>{{ $data->isi }}</td>
+                                        <td>{{ $data->tgl_kegiatan }}</td>
                                         <td>
-                                            <form action="{{ route('anak_asuh.destroy', $data->id) }}" method="post">
+                                            <form action="{{ route('kegiatan.destroy', $data->id) }}" method="post">
                                                 @method('DELETE')
                                                 @csrf
-                                                <a href="{{ route('anak_asuh.edit', $data->id) }}"
+                                                <a href="{{ route('kegiatan.edit', $data->id) }}"
                                                     class="btn btn-outline-info">Edit</a>
-                                                <a href="{{ route('anak_asuh.show', $data->id) }}"
+                                                <a href="{{ route('kegiatan.show', $data->id) }}"
                                                     class="btn btn-outline-warning">Show</a>
                                                 <button type="submit" class="btn btn-outline-danger"
                                                     onclick="return confirm('Apakah anda yakin menghapus ini?');">Delete</button>

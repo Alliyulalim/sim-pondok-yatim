@@ -5,53 +5,52 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Data Anak</div>
+                    <div class="card-header">Edit Kegiatan</div>
                     <div class="card-body">
-                        <form action="{{ route('anak_asuh.update', $anak_asuh->id) }}" method="post">
+                        <form action="{{ route('kegiatan.update', $kegiatan->id) }}" method="post">
                             @csrf
                             @method('put')
-                            <div class="form-group">
-                                <label for="">Masukan Nama Anak</label>
-                                <input type="text" name="nama_anak" value="{{ $anak_asuh->nama_anak }}"
-                                    class="form-control @error('nama_anak') is-invalid @enderror">
-                                @error('nama_anak')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="">jenis kelamin</label>
-                                <input type="text" name="jk" value="{{ $anak_asuh->jk }}"
-                                    class="form-control @error('jk') is-invalid @enderror">
-                                @error('jk')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="">Masukan Tempat, tanggal lahir</label>
-                                <input type="text" name="tgl_lahir" value="{{ $anak_asuh->tgl_lahir }}"
-                                    class="form-control @error('ttl') is-invalid @enderror">
-                                @error('ttl')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
 
                             <div class="form-group">
-                                <label for="">Masukan status</label>
-                                <input type="text" name="status" value="{{ $anak_asuh->status }}"
-                                    class="form-control @error('status') is-invalid @enderror">
-                                @error('status')
+                                <label for="">Judul</label>
+                                <input type="text" name="judul" value="{{ $kegiatan->judul }}"
+                                    class="form-control @error('judul') is-invalid @enderror">
+                                @error('judul')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-
+                            <div class="form-group">
+                                <label for="">Gambar</label>
+                                <input type="file" name="image" value="{{ $kegiatan->image }}"
+                                    class="form-control @error('image') is-invalid @enderror">
+                                @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="">Isi</label>
+                                <input type="textarea" name="isi" value="{{ $kegiatan->isi }}"
+                                    class="form-control @error('isi') is-invalid @enderror">
+                                @error('isi')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="">Tanggal Kegiatan</label>
+                                <input type="date" name="tgl_kegiatan" value="{{ $kegiatan->tgl_kegiatan }}"
+                                    class="form-control @error('tgl_kegiatan') is-invalid @enderror">
+                                @error('tgl_kegiatan')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                             <div class="form-group">
                                 <button type="reset" class="btn btn-outline-warning">Reset</button>
                                 <button type="submit" class="btn btn-outline-primary">Simpan</button>

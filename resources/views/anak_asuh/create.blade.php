@@ -10,7 +10,7 @@
                         <form action="{{ route('anak_asuh.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="">Masukan ID</label>
+                                <label for="">ID Pengasuh</label>
                             <select name="id_pengasuhs" class="form-control @error('id_pengasuhs') is-invalid @enderror">
                                 @foreach($pengasuh as $data)
                                 <option value="{{$data->id}}">{{$data->id_pengasuhs}}</option>
